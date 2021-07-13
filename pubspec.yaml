@@ -47,18 +47,41 @@ flutter:
   assets:
     
     - assets/images/animals/cats/cat1.jpg
+    - assets/images/animals/cats/cat2.jpg
+    - assets/images/animals/cats/cat3.jpg
+    - assets/images/animals/cats/cat4.jpg
+    - assets/images/animals/cats/cat5.jpg
+    - assets/images/animals/cats/cat6.jpg
 
     - assets/images/animals/horses/horse1.jpg
+    - assets/images/animals/horses/horse2.jpg
+    - assets/images/animals/horses/horse3.jpg
+    - assets/images/animals/horses/horse4.jpg
+    - assets/images/animals/horses/horse5.jpg
 
     - assets/images/animals/dogs/dog1.jpg
+    - assets/images/animals/dogs/dog2.jpg
+    - assets/images/animals/dogs/dog3.jpg
+    - assets/images/animals/dogs/dog4.jpg
 
     - assets/images/animals/lions/lion1.jpg
+    - assets/images/animals/lions/lion2.jpg
+    - assets/images/animals/lions/lion3.jpg
+    - assets/images/animals/lions/lion4.jpg
 
     - assets/images/animals/tigers/tiger1.jpg
+    - assets/images/animals/tigers/tiger2.jpg
+    - assets/images/animals/tigers/tiger3.jpg
+    - assets/images/animals/tigers/tiger4.jpg
 
     - assets/images/animals/wolfs/wolf1.jpg
+    - assets/images/animals/wolfs/wolf2.jpg
+    - assets/images/animals/wolfs/wolf3.jpg
+    - assets/images/animals/wolfs/wolf4.jpg
 
     - assets/images/animals/bears/bear1.jpg
+    - assets/images/animals/bears/bear2.jpg
+    - assets/images/animals/bears/bear3.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

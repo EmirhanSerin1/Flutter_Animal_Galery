@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animal_gallery/screens/random_animals_big/big_animal_photo.dart';
+import 'package:flutter_animal_gallery/screens/selected_categories_screen/cats.dart';
+import 'package:flutter_animal_gallery/screens/selected_categories_screen/dogs.dart';
+import 'package:flutter_animal_gallery/screens/selected_categories_screen/horses.dart';
+import 'package:flutter_animal_gallery/screens/selected_categories_screen/lions.dart';
 
-import 'categories/categories.dart';
+import '../categories_screen/categories.dart';
+
 
 class HomePage extends StatelessWidget {
   @override
@@ -53,18 +59,18 @@ class HomePage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              buildRandomAnimals(context, "assets/images/animals/cats/cat1.jpg"),
+              buildRandomAnimals(context, "assets/images/animals/cats/cat1.jpg", CatsGallery()),
               SizedBox(width: 8),
-              buildRandomAnimals(context, "assets/images/animals/horses/horse1.jpg"),
+              buildRandomAnimals(context, "assets/images/animals/horses/horse1.jpg", HorsesGallery()),
             ],
           ),
           SizedBox(height: 8),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              buildRandomAnimals(context, "assets/images/animals/dogs/dog1.jpg"),
+              buildRandomAnimals(context, "assets/images/animals/dogs/dog1.jpg", DogsGallery()),
               SizedBox(width: 8),
-              buildRandomAnimals(context, "assets/images/animals/lions/lion1.jpg")
+              buildRandomAnimals(context, "assets/images/animals/lions/lion1.jpg", LionsGallery())
             ],
           )
         ],
@@ -132,7 +138,7 @@ class HomePage extends StatelessWidget {
             width: 120,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              image: DecorationImage(image: AssetImage("assets/images/animals/horses/horse1.jpg"), fit: BoxFit.cover),
+              image: DecorationImage(image: AssetImage("assets/images/animals/wolfs/wolf1.jpg"), fit: BoxFit.cover),
             ),
           )
         ],
@@ -140,13 +146,19 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  buildRandomAnimals(BuildContext context, String imageUrl) {
-    return Container(
-      width: MediaQuery.of(context).size.width / 2.29,
-      height: 250,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        image: DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover),
+  buildRandomAnimals(BuildContext context, String imageUrl, Widget widget) {
+    return GestureDetector(
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> RandomAnimalsBig(imageUrl, widget))),
+          child: Hero(
+        tag: imageUrl,
+            child: Container(
+          width: MediaQuery.of(context).size.width / 2.29,
+          height: 250,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            image: DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover),
+          ),
+        ),
       ),
     );
   }
