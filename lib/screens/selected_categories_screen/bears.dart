@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animal_gallery/core/constant/imagesUrl.dart';
+import 'package:flutter_animal_gallery/screens/photo_detail/animal_photo_detail.dart';
 
 class BearsGallery extends StatelessWidget {
   const BearsGallery({Key key}) : super(key: key);
@@ -17,14 +18,14 @@ class BearsGallery extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildOnePhoto(context, imageUrl[6], "1.jpg"),
-                    buildOnePhoto(context, imageUrl[6], "2.jpg"),
+                    buildOnePhoto(context, imageUrl[6], "1.jpg", AnimalPhotoDetail(imageUrl[6]+"1.jpg")),
+                    buildOnePhoto(context, imageUrl[6], "2.jpg", AnimalPhotoDetail(imageUrl[6]+"2.jpg")),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildOnePhoto(context, imageUrl[6], "3.jpg"),
+                    buildOnePhoto(context, imageUrl[6], "3.jpg", AnimalPhotoDetail(imageUrl[6]+"3.jpg")),
                   ],
                 ),
                 
@@ -38,25 +39,28 @@ class BearsGallery extends StatelessWidget {
   }
 }
 
-buildOnePhoto(BuildContext context, String imageUrl, String imageUrlSecondPart) {
-  return Padding(
-    padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
-    child: Container(
-      width: MediaQuery.of(context).size.width / 2.2,
-      height: 220,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(imageUrl + imageUrlSecondPart),
-            fit: BoxFit.cover,
-          ),
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 3,
-              color: Color(0xEE96356A).withOpacity(0.80),
-              offset: Offset(0, 4),
-            )
-          ]),
+buildOnePhoto(BuildContext context, String imageUrl, String imageUrlSecondPart, Widget widget) {
+  return GestureDetector(
+    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> widget)),
+      child: Padding(
+      padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
+      child: Container(
+        width: MediaQuery.of(context).size.width / 2.2,
+        height: 220,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(imageUrl + imageUrlSecondPart),
+              fit: BoxFit.cover,
+            ),
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 3,
+                color: Color(0xEE96356A).withOpacity(0.80),
+                offset: Offset(0, 4),
+              )
+            ]),
+      ),
     ),
   );
 }
