@@ -1,1 +1,1 @@
-This is an animal photo gallery made using flutter.
+This is an animal photo gallery application made using flutter.
