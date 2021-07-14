@@ -18,18 +18,17 @@ class WolfsGallery extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildOnePhoto(context, imageUrl[5], "1.jpg", AnimalPhotoDetail(imageUrl[5]+"1.jpg")),
-                    buildOnePhoto(context, imageUrl[5], "2.jpg", AnimalPhotoDetail(imageUrl[5]+"2.jpg")),
+                    buildOnePhoto(context, imageUrl[5], "1.jpg", AnimalPhotoDetail(imageUrl[5] + "1.jpg")),
+                    buildOnePhoto(context, imageUrl[5], "2.jpg", AnimalPhotoDetail(imageUrl[5] + "2.jpg")),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildOnePhoto(context, imageUrl[5], "3.jpg", AnimalPhotoDetail(imageUrl[5]+"3.jpg")),
-                    buildOnePhoto(context, imageUrl[5], "4.jpg", AnimalPhotoDetail(imageUrl[5]+"4.jpg")),
+                    buildOnePhoto(context, imageUrl[5], "3.jpg", AnimalPhotoDetail(imageUrl[5] + "3.jpg")),
+                    buildOnePhoto(context, imageUrl[5], "4.jpg", AnimalPhotoDetail(imageUrl[5] + "4.jpg")),
                   ],
                 ),
-                
               ],
             ),
           ),
@@ -41,10 +40,9 @@ class WolfsGallery extends StatelessWidget {
 
 buildOnePhoto(BuildContext context, String imageUrl, String imageUrlSecondPart, Widget widget) {
   return GestureDetector(
-    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> widget)),
-
-      child: Padding(
-      padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
+    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => widget)),
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
       child: Container(
         width: MediaQuery.of(context).size.width / 2.2,
         height: 220,

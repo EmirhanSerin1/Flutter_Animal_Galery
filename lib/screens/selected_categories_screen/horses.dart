@@ -50,7 +50,7 @@ buildOnePhoto(BuildContext context, String imageUrl, String imageUrlSecondPart, 
     onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> widget)),
 
       child: Padding(
-      padding: const EdgeInsets.fromLTRB(0, 16, 0, 0),
+      padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
       child: Container(
         width: MediaQuery.of(context).size.width / 2.2,
         height: 220,
